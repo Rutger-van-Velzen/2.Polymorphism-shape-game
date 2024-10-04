@@ -12,7 +12,6 @@ public class Action implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // Update the positions (move the circle down/right and rectangle up/left)
-        panel.updatePositions(1, 1, -1, -1);
+        panel.updatePositions();
     }
 }

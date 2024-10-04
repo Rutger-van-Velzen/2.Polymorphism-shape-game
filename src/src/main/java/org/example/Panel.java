@@ -2,33 +2,33 @@ package org.example;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Panel extends JPanel {
 
-    // Position and size of the shapes
-    private int circleX = 30, circleY = 30, circleDiameter = 50;
-    private int rectX = 100, rectY = 100, rectWidth = 50, rectHeight = 50;
+    private List<GameObject> gameObjects = new ArrayList<>();
 
-    // Method to update the positions
-    public void updatePositions(int circleDeltaX, int circleDeltaY, int rectDeltaX, int rectDeltaY) {
-        circleX += circleDeltaX;
-        circleY += circleDeltaY;
-        rectX += rectDeltaX;
-        rectY += rectDeltaY;
-        repaint(); // Repaint the panel to show the new positions
+    public void updatePositions() {
+//        gameObjects.forEach(gameObject -> {
+//            gameObject.setPosition();
+//        });
+//
+//        repaint();
     }
 
     @Override
     protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
 
-        // Draw circle
-        g2d.setColor(Color.BLUE);
-        g2d.fillOval(circleX, circleY, circleDiameter, circleDiameter);
+        gameObjects.forEach(gameObject -> {
+            g2d.setColor(gameObject.getColor());
+            g2d.fill(gameObject.getShape());
+        });
+    }
 
-        // Draw rectangle
-        g2d.setColor(Color.GREEN);
-        g2d.fillRect(rectX, rectY, rectWidth, rectHeight);
+
+    public void addGameObject(GameObject gameObject){
+        gameObjects.add(gameObject);
     }
 }
