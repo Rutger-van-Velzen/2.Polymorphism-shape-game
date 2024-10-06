@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Panel extends JPanel {
-    private static Panel panel = new Panel();
-    private static List<GameObject> gameObjects = new ArrayList<>();
+    private static final Panel panel = new Panel();
+    private static final List<GameObject> gameObjects = new ArrayList<>();
 
     private Panel(){
 
