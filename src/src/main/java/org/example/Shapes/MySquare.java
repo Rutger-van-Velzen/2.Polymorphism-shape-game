@@ -4,21 +4,15 @@ import org.example.DrawInstructions;
 import org.example.Panel;
 
 import java.awt.*;
+import java.awt.geom.Rectangle2D;
 
-public class MySquare implements MyShapes{
+public class MySquare {
 
-    @Override
     public void draw() {
-        Panel.addDrawInstructions(new DrawInstructions("rectangle", Color.RED, 100, 300, 50, 50));
-    }
+        final DrawInstructions drawInstructions = new DrawInstructions();
+        drawInstructions.setColor(Color.RED);
+        drawInstructions.setShape(new Rectangle2D.Double(100, 300, 50, 50));
 
-    @Override
-    public String getName() {
-        return "Square";
-    }
-
-    @Override
-    public int getNumberOfSides() {
-        return 4;
+        Panel.addDrawInstructions(drawInstructions);
     }
 }

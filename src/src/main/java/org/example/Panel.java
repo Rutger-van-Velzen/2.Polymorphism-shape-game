@@ -17,14 +17,6 @@ public class Panel extends JPanel {
         return PANEL;
     }
 
-    public void updatePositions() {
-//        gameObjects.forEach(gameObject -> {
-//            gameObject.setPosition();
-//        });
-//
-//        repaint();
-    }
-
     @Override
     protected void paintComponent(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
@@ -34,7 +26,6 @@ public class Panel extends JPanel {
             g2d.fill(drawInstructions.getShape());
         });
     }
-
 
     public static void addDrawInstructions(DrawInstructions drawInstructions){
         DRAW_INSTRUCTIONS.add(drawInstructions);

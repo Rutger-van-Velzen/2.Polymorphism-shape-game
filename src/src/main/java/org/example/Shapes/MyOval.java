@@ -4,21 +4,15 @@ import org.example.DrawInstructions;
 import org.example.Panel;
 
 import java.awt.*;
+import java.awt.geom.Ellipse2D;
 
-public class MyOval implements MyShapes{
+public class MyOval {
 
-    @Override
     public void draw() {
-        Panel.addDrawInstructions(new DrawInstructions("oval", Color.PINK, 300, 290, 50, 70));
-    }
+        final DrawInstructions drawInstructions = new DrawInstructions();
+        drawInstructions.setColor(Color.PINK);
+        drawInstructions.setShape(new Ellipse2D.Double(300, 290, 50, 70));
 
-    @Override
-    public String getName() {
-        return "Oval";
-    }
-
-    @Override
-    public int getNumberOfSides() {
-        return 0;
+        Panel.addDrawInstructions(drawInstructions);
     }
 }

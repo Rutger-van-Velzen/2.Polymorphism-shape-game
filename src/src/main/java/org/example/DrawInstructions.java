@@ -1,34 +1,24 @@
 package org.example;
 
 import java.awt.*;
-import java.awt.geom.Ellipse2D;
-import java.awt.geom.Rectangle2D;
 
 public class DrawInstructions {
-    private final Shape shape;
-    private final Color color;
-
-    public DrawInstructions(String shape, Color color, int x, int y, int w, int h){
-        this.color = color;
-
-        if(shape.equalsIgnoreCase("rectangle")){
-            this.shape = new Rectangle2D.Double(x, y, w, h);
-        } else if(shape.equalsIgnoreCase("oval")){
-            this.shape = new Ellipse2D.Double(x, y, w, h);
-        } else {
-            throw new RuntimeException("Unknown shape: " + shape);
-        }
-    }
+    private Shape shape;
+    private Color color;
 
     public Shape getShape() {
         return shape;
+    }
+
+    public void setShape(Shape shape) {
+        this.shape = shape;
     }
 
     public Color getColor() {
         return color;
     }
 
-    public void setPosition(int x, int y){
-        ((Rectangle2D) this.shape).add(x, y);
+    public void setColor(Color color) {
+        this.color = color;
     }
 }
