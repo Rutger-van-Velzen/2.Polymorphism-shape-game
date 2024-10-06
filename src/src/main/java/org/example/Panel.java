@@ -6,15 +6,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Panel extends JPanel {
-    private static final Panel panel = new Panel();
-    private static final List<GameObject> gameObjects = new ArrayList<>();
+    private static final Panel PANEL = new Panel();
+    private static final List<DrawInstructions> DRAW_INSTRUCTIONS = new ArrayList<>();
 
     private Panel(){
 
     }
 
     public static Panel getInstance(){
-        return panel;
+        return PANEL;
     }
 
     public void updatePositions() {
@@ -29,14 +29,14 @@ public class Panel extends JPanel {
     protected void paintComponent(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
 
-        gameObjects.forEach(gameObject -> {
-            g2d.setColor(gameObject.getColor());
-            g2d.fill(gameObject.getShape());
+        DRAW_INSTRUCTIONS.forEach(drawInstructions -> {
+            g2d.setColor(drawInstructions.getColor());
+            g2d.fill(drawInstructions.getShape());
         });
     }
 
 
-    public static void addGameObject(GameObject gameObject){
-        gameObjects.add(gameObject);
+    public static void addDrawInstructions(DrawInstructions drawInstructions){
+        DRAW_INSTRUCTIONS.add(drawInstructions);
     }
 }

@@ -1,6 +1,6 @@
 package org.example.Shapes;
 
-import org.example.GameObject;
+import org.example.DrawInstructions;
 import org.example.Panel;
 
 import java.awt.*;
@@ -9,7 +9,7 @@ public class MyOval implements MyShapes{
 
     @Override
     public void draw() {
-        Panel.addGameObject(new GameObject("oval", Color.PINK, 300, 290, 50, 70));
+        Panel.addDrawInstructions(new DrawInstructions("oval", Color.PINK, 300, 290, 50, 70));
     }
 
     @Override

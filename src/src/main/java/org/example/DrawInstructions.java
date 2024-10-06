@@ -4,11 +4,11 @@ import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Rectangle2D;
 
-public class GameObject {
+public class DrawInstructions {
     private final Shape shape;
     private final Color color;
 
-    public GameObject(String shape, Color color, int x, int y, int w, int h){
+    public DrawInstructions(String shape, Color color, int x, int y, int w, int h){
         this.color = color;
 
         if(shape.equalsIgnoreCase("rectangle")){

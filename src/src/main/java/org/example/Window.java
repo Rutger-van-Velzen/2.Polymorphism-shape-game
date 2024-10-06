@@ -8,7 +8,6 @@ import java.util.List;
 
 public class Window {
    public void initWindow(){
-       JFrame frame = new JFrame("Shape game");
 
        final MyShapes sq = new MySquare();
        final MyShapes ci = new MyCircle();
@@ -31,6 +30,8 @@ public class Window {
 //
 //       Timer timer = new Timer(15, shapeMover);
 //       timer.start();
+
+       JFrame frame = new JFrame("Draw Shapes");
 
        frame.add(Panel.getInstance());
 
