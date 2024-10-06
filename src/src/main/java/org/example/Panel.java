@@ -6,8 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Panel extends JPanel {
+    private static Panel panel = new Panel();
+    private static List<GameObject> gameObjects = new ArrayList<>();
 
-    private List<GameObject> gameObjects = new ArrayList<>();
+    private Panel(){
+
+    }
+
+    public static Panel getInstance(){
+        return panel;
+    }
 
     public void updatePositions() {
 //        gameObjects.forEach(gameObject -> {
@@ -28,7 +36,7 @@ public class Panel extends JPanel {
     }
 
 
-    public void addGameObject(GameObject gameObject){
+    public static void addGameObject(GameObject gameObject){
         gameObjects.add(gameObject);
     }
 }

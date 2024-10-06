@@ -6,15 +6,10 @@ import org.example.Panel;
 import java.awt.*;
 
 public class MyRectangle implements MyShapes{
-    private Panel panel;
-
-    public MyRectangle(Panel panel){
-        this.panel = panel;
-    }
 
     @Override
     public void draw() {
-        panel.addGameObject(new GameObject("rectangle", Color.GREEN, 250, 100, 100, 50));
+        Panel.addGameObject(new GameObject("rectangle", Color.GREEN, 250, 100, 100, 50));
     }
 
     @Override

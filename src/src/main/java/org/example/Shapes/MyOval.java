@@ -5,20 +5,20 @@ import org.example.Panel;
 
 import java.awt.*;
 
-public class MySquare implements MyShapes{
+public class MyOval implements MyShapes{
 
     @Override
     public void draw() {
-        Panel.addGameObject(new GameObject("rectangle", Color.RED, 100, 300, 50, 50));
+        Panel.addGameObject(new GameObject("oval", Color.PINK, 300, 290, 50, 70));
     }
 
     @Override
     public String getName() {
-        return "Square";
+        return "Oval";
     }
 
     @Override
     public int getNumberOfSides() {
-        return 4;
+        return 0;
     }
 }
